@@ -76,7 +76,7 @@ class Student:
     self.is_alive()
     
 obj = Student('Bob')
-for day in range(270):
+for day in range(365):
   if obj.alive == False:
     break
   obj.live(day)
