@@ -1,4 +1,18 @@
 from random import *
+
+class University:
+  def __init__(self):
+    self.title = title
+    self.faculty = faculty
+    self.budget = False;
+  def chck_progress(self, student):
+    if student.progress > 3:
+      self.budget = True 
+      self.money += 20
+  def isbudget(self):
+    if self.budget == True:
+      print('Are you on budget&')
+  
 # №1
 class Student:
   def __init__(self, name):
@@ -8,31 +22,39 @@ class Student:
     self.money = 100
     self.figure = 60
     self.alive = True
+    
   def study(self):
     print('Stude time')
     self.progress +=0.15
     self.gladness -= 3
     self.money -= 10
     self.figure += 1
+  def ask_budget(self, university):
+    university.check_progress(self.progress)
+    
   def sleep(self):
     print('Sleep time')
     self.gladness += 2
     self.figure += 0.5
+    
   def chill(self):
     print('Cheel time')
     self.progress -=0.12
     self.gladness += 5
     self.money -= 40
+    
   def work(self):
     print('work time')
     self.gladness -= 2
     self.money += 60
     self.figure -=1.5
+    
   def sport(self):
     print('sport time')
     self.figure -=2.5
     self.money -5
     self.gladness += 5
+    
   def is_alive(self):
     if self.progress < -0.5:
       print('So bad. Studyless!')
@@ -62,6 +84,8 @@ class Student:
   def live(self, day):
     print('Day', day)
     live_cube = randint(1,4)
+    if day % 10 == 0:
+      self.ask_budget(univer)
     if live_cube == 1:
       self.study()
     elif live_cube == 2:
@@ -76,6 +100,7 @@ class Student:
     self.is_alive()
     
 obj = Student('Bob')
+univer = University('Step univer')
 for day in range(365):
   if obj.alive == False:
     break
