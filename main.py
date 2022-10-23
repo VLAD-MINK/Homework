@@ -244,22 +244,34 @@ class Cat(Animal):
     print(self.name,'maaaaaaay!!!!!!!!!!!error!')
 
 class Dog(Animal):
-  def attachment(self):
-    self.attachment = 0
+  def attachment1(self):
     self.attachment += 1
     print(self.name,'Gav Gav!')
-  def angry(self):
-    self.angry = 20
+    if self.attachment >= 15:
+      print('Fell in love')
+  def angry1(self):
     self.angry -= 1
     print('GAV GAV GAV!!!!!!')
+    if self.angry <=5:
+      print('i am not angry')
   def play(self):
     print(self.name,'Plaing!!!')
+  def __init__(self,name):
+        super().__init__(name)
+        self.attachment = 0
+        self.angry = 20
+  
 
 class Hamster(Animal):
-  def run_in_the_circle(self):
-    self.run_in_the_circle = 0
+  def run_in_the_circle1(self):
     self.run_in_the_circle += 5
     print(self.name, 'Run Run!')
+    if self.run_in_the_circle >= 50:
+      print('I want cill')
+  def __init__(self,name):
+        super().__init__(name)
+        self.run_in_the_circle = 0
+
 
 obj = Cat('Rygic')
 obj.lazy()
@@ -269,14 +281,14 @@ for i in range(20):
   obj.happybirthday()
 
 obj1 = Dog('Bobby')
-obj1.attachment()
-obj1.angry()
 
 for i in range(20):
   obj1.happybirthday()
+  obj1.attachment1()
+  obj1.angry1()
 
 obj2 = Hamster('Dolboybic')
-obj2.run_in_the_circle()
 
 for i in range(20):
   obj2.happybirthday()
+  obj2.run_in_the_circle1()
