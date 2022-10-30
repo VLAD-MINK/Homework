@@ -221,74 +221,80 @@
 
 
 
-class Animal:
+class Human:
   def __init__(self, name):
     self.name = name
     self.gender = 'None'
-    self.age = 0
   def happybirthday(self):
     self.age += 1
     print('one year more' ,self.age)
-  def toilet(self):
-    print(self.name,'owner i want go to a toilet')
   def eat(self):
-    print(self.name,'owner, i want eat')
+    print(self.name,'i want eat')
     
-class Cat(Animal):
-  def lazy(self):
-    self.lazy
-    print(self.name,'i want sleep')
+class Student(Human):
     
   def madness(self):
-    self.madness
-    print(self.name,'maaaaaaay!!!!!!!!!!!error!')
+    print(self.name,'')
+  def age(self):
+    self.age = 17
+  def __init__(self,name):
+        super().__init__(name)
+        self.age = 17
 
-class Dog(Animal):
-  def attachment1(self):
-    self.attachment += 1
-    print(self.name,'Gav Gav!')
-    if self.attachment >= 15:
-      print('Fell in love')
+  def study(self):
+    print('I want study plees do not kitt me teacher')
+
+  def eat(self):
+    print('I am a student i do not want eat')
+
+class Teacher(Human):
   def angry1(self):
-    self.angry -= 1
-    print('GAV GAV GAV!!!!!!')
-    if self.angry <=5:
-      print('i am not angry')
-  def play(self):
-    print(self.name,'Plaing!!!')
+    print(self.name, 'You are a very stupid creature!!!')
+
+  def angry2(self):
+    print(self.name, 'You are the dumbest person in the world!!!')
+
+  def angry3(self):
+    print(self.name, 'Again you have 2!!!')
+
   def __init__(self,name):
         super().__init__(name)
-        self.attachment = 0
         self.angry = 20
+        self.age = 48
+  def pride(self):
+    print(self.name, 'Its weird but i am proud of you')
+  def dead(self):
+    print(self.name, '...Teacher died for you...')
+  def live(self, day):
+    print('Day', day)
+    live_cube = randent(1,3)
+    if live_cube == 1:
+      self.angry1()
+    elif live_cube == 2:
+      self.angry2()
+    elif live_cube == 3:
+      self.angry3()
+    self.end()
+    self.is_alive()
   
-
-class Hamster(Animal):
-  def run_in_the_circle1(self):
-    self.run_in_the_circle += 5
-    print(self.name, 'Run Run!')
-    if self.run_in_the_circle >= 50:
-      print('I want cill')
-  def __init__(self,name):
-        super().__init__(name)
-        self.run_in_the_circle = 0
-
-
-obj = Cat('Rygic')
-obj.lazy()
+obj = Student('Rygic')
 obj.madness()
 
 for i in range(20):
   obj.happybirthday()
+  obj.study()
 
-obj1 = Dog('Bobby')
+obj1 = Teacher('Teacher')
 
-for i in range(20):
+for i in range(5):
+  obj1.pride()
   obj1.happybirthday()
-  obj1.attachment1()
+for i in range(15):
+  obj1.happybirthday()
   obj1.angry1()
+  obj1.angry2()
+  obj1.angry3()
 
-obj2 = Hamster('Dolboybic')
 
-for i in range(20):
-  obj2.happybirthday()
-  obj2.run_in_the_circle1()
+obj1.dead()
+
